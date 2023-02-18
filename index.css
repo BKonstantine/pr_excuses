@@ -15,15 +15,12 @@ body {
   justify-content: center;
 }
 
-.title {
-  cursor: pointer;
-  text-align: center;
+.title {  
+  cursor: pointer;  
   font-weight: 400;
   letter-spacing: 0.2rem;
   color: #00ffff;
-  text-shadow: 0 0 7px rgba(0, 255, 255, 0.7);
-  border-right: 5px solid #00ffff;
-  animation: .5s cursor infinite;
+  text-shadow: 0 0 7px rgba(0, 255, 255, 0.7);  
 }
 
 .footer {
@@ -32,8 +29,8 @@ body {
   left: 0;
   height: 100px;
   width: 100%;
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -42,18 +39,4 @@ body {
   text-align: center;
   color: #00ffff;
   text-shadow: 0 0 3px rgba(0, 255, 255, 0.7);
-}
-
-@keyframes cursor {
-  from {
-    border-right: 5px solid rgba(0, 255, 255, 0);
-  }
-
-  50% {
-    border-right: 5px solid rgba(0, 255, 255, 1);
-  }
-
-  to {
-    border-right: 5px solid rgba(0, 255, 255, 0);
-  }
 }

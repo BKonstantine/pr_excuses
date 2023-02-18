@@ -15,13 +15,63 @@
   </head>
   <body>
     <main class="main">
-      <h1 class="title">Внесите правочки</h1>
+      <h1 class="title"><span class="element"></span></h1>
     </main>
     <footer class="footer">
       <a href="http://programmingexcuses.com/" class="footer__link"
         >По мотивам оправданий программистов</a
       >
     </footer>
-    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      const list = [
+        "Готовим публичную позицию",
+        "Вы получили наш релиз?",
+        "Вы подписаны на нашу рассылку?",
+        "Это вырвано из контекста",
+        "Возьмите вот этот актуальный лого",
+        "А вот это фото спикера лучше ",
+        "А коммент скоро согласуете? ",
+        "Это значит другое, чего бы это не значило ",
+        "Внесите правочки",
+        "Нужно больше релизов Богу Релизов",
+        "Дедлайны для слабаков",
+        "Сделать вчера",
+        "Написанный вовремя текст - это единорог ",
+        "Шум ничего не доказывает",
+        "Какой у вас бюджет и почему его нет? ",
+        "Создай чатик под проект",
+        "Как не надо? А зачем вы просили это сделать?! ",
+        "Вы сможете зайти в конференцию сразу после окончания обновления, через 59:00…",
+        ,
+        "А есть аналитика по проекту?",
+        "Если уже нечего говорить, пора говорить  правду",
+      ];
+
+      const title = document.querySelector(".title");
+
+      function getRandomNumber(list) {
+        return Math.floor(Math.random() * list.length);
+      }
+
+      function getRandomTitle() {
+        let number = getRandomNumber(list);
+        return list[number];
+      }
+
+      let text = getRandomTitle();
+
+      console.log(text);
+      
+      let typed = new Typed(".element", {
+        strings: [getRandomTitle()],
+        typeSpeed: 70,
+        backSpeed: 60,
+        backDelay: 700,
+        loop: true,                
+      });
+
+      title.addEventListener("click", getRandomTitle);
+    </script>
   </body>
 </html>
