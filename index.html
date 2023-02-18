@@ -18,7 +18,7 @@
       <h1 class="title"><span class="element"></span></h1>
     </main>
     <footer class="footer">
-      <a href="http://programmingexcuses.com/" class="footer__link"
+      <a target="_blank" href="http://programmingexcuses.com/" class="footer__link"
         >По мотивам оправданий программистов</a
       >
     </footer>
@@ -43,14 +43,13 @@
         "Создай чатик под проект",
         "Как не надо? А зачем вы просили это сделать?! ",
         "Вы сможете зайти в конференцию сразу после окончания обновления, через 59:00…",
-        ,
         "А есть аналитика по проекту?",
         "Если уже нечего говорить, пора говорить  правду",
       ];
 
       const title = document.querySelector(".title");
 
-      function getRandomNumber(list) {
+      function getRandomNumber() {
         return Math.floor(Math.random() * list.length);
       }
 
@@ -59,19 +58,26 @@
         return list[number];
       }
 
-      let text = getRandomTitle();
+      let typed = null;
 
-      console.log(text);
-      
-      let typed = new Typed(".element", {
-        strings: [getRandomTitle()],
-        typeSpeed: 70,
-        backSpeed: 60,
-        backDelay: 700,
-        loop: true,                
+      function createTyped() {
+        typed = new Typed(".element", {
+          strings: [getRandomTitle()],
+          typeSpeed: 40,          
+          loop: false,
+        });
+      }
+
+      window.onload = createTyped;
+
+      title.addEventListener("click", () => {
+        typed.destroy();
+        typed = new Typed(".element", {
+          strings: [getRandomTitle()],
+          typeSpeed: 40,          
+          loop: false,
+        });
       });
-
-      title.addEventListener("click", getRandomTitle);
     </script>
   </body>
 </html>
